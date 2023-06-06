@@ -16,7 +16,6 @@ public class Bookstore {
     private Long id;
 
     private String address;
-    private float finalValue;
 
     @OneToMany(cascade = CascadeType.PERSIST)
     private Set<Product> products;
