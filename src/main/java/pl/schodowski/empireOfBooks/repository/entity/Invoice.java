@@ -16,12 +16,19 @@ public class Invoice {
     private Long id;
 
     private LocalDate date;
-    private float orderValue;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Customer customer;
 
     @ManyToMany
     private Set<Product> products;
 
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "id=" + id +
+                ", date=" + date +
+                ", customer=" + customer.getName() +
+                '}';
+    }
 }
